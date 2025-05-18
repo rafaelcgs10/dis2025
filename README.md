@@ -119,7 +119,8 @@ Now we can start the Flask webserver:
 ```shell
 flask run --debug
 ```
-Open a web browser and navigate to ` http://127.0.0.1:5000`.
+Open a web browser and navigate to `http://127.0.0.1:5000`.
+
 Congratulations, you have completed your very minimal web application.
 
 ### Minimal Flask App with a list data page
