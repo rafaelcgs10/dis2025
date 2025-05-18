@@ -188,9 +188,9 @@ In the MVC Flask app, we will use Postgres.
 
 Let's edit the `app.py` file again.
 
-Replace all its content with the code in [`minimal/app.py`](https://github.com/rafaelcgs10/dis2025/blob/main/minimal/app.py) in this repository.
+Replace all its content with the code in [`minimal/app.py`](https://github.com/rafaelcgs10/dis2025/blob/main/minimal/app.py).
 
-Read all the comments in that file, and when your are done come back to this point in the tutorial.
+Read all the comments in that file, and when you are done come back to this point in the tutorial.
 
 ## Minimal Flask app with
 
