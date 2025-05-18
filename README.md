@@ -135,7 +135,7 @@ flask run --debug
 ```
 Open a web browser and navigate to [`http://127.0.0.1:5000`](http://127.0.0.1:5000).
 
-Congratulations, you have completed your very minimal web application.
+Congratulations, you have started your very minimal web application.
 
 Press `ctrl+c` to stop the Flask server.
 
@@ -186,6 +186,9 @@ SQLite is just a toy database tool, but it is enough for our goals in this minim
 
 In the MVC Flask app, we will use Postgres.
 
+Let's edit the `app.py` file again.
+
+Replace all its content with the code in [`minimal/app.py`](https://github.com/rafaelcgs10/dis2025/blob/main/minimal/app.py) in this repository.
 
 ## Minimal Flask app with
 
