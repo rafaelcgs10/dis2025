@@ -137,7 +137,14 @@ In our case, the templates will be HTML files containing the placeholders for ou
 
 
 ### Minimal Flask App with a SQLite Database
-SQLite is a quick-and-dirty alternative to Postgres.It is a SQL database, but it is not a dedicated database server. Therefore, it makes the application setup easier, as we don't need to have a separate program running. In the real world, people use things like Postgres because it has way better multi-core performance, and it scales with more replicas. SQLite is just a toy database tool, but it is enough for our goals in this minimal example. In the MVC Flask app, we will use Postgres.
+SQLite is a quick-and-dirty alternative to Postgres.
+
+It is a SQL database, but it is not a dedicated database server. Therefore, it makes the application setup easier, as we don't need to have a separate program running. 
+In the real world, people use things like Postgres because it has way better multi-core performance, and it scales with more replicas. 
+
+SQLite is just a toy database tool, but it is enough for our goals in this minimal example. 
+
+In the MVC Flask app, we will use Postgres.
 
 Press `ctrl+c` to stop the Flask server from the previous application.
 
