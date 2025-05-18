@@ -29,7 +29,7 @@ And here is a very short git cheatsheet:
 |git clone *remote_url*         |clones a git repository               |
 |git add *files*                |add files to stage                    |
 |git commit -m *commit_message* |commit staged files with message      |
-|git push                       |push changes from remote              |
+|git push                       |push changes to remote                |
 |git pull                       |pulls changes from remote             |
 
 ## Learn some basic Python
