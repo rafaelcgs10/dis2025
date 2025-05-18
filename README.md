@@ -190,6 +190,8 @@ Let's edit the `app.py` file again.
 
 Replace all its content with the code in [`minimal/app.py`](https://github.com/rafaelcgs10/dis2025/blob/main/minimal/app.py) in this repository.
 
+Read all the comments in that file, and when your are done come back to this point in the tutorial.
+
 ## Minimal Flask app with
 
 
