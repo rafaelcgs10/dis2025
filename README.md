@@ -1,4 +1,4 @@
-# DIS 2025
+# DIS Flask Tutorial 2025
 Flask tutorial for the Databases and Information Systems 2025 course
 
 # Preliminaries
