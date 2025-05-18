@@ -10,21 +10,32 @@ The structure of this repository is the following:
 Tree
 
 ## Helpful cheatsheets:
-It is very useful to know some basic terminal commands. Here is a very short cheatsheet:
+It is very useful to know some basic terminal commands.
 
-|Command       |Description                           |
-|--------------|--------------------------------------| 
-|pwd           |Shows present working directory       |
-|mkdir dirname |Make directory                        |
-|cd dirname    |Change directory                      |
-|cd ..         |Go to parent directory of current dir |
-|ls            |List files                            |
+Here is a very short terminal cheatsheet:
 
+|Command         |Description                           |
+|----------------|--------------------------------------| 
+|pwd             |Shows present working directory       |
+|mkdir *dirname* |Make directory                        |
+|cd *dirname*    |Change directory                      |
+|cd ..           |Go to parent directory of current dir |
+|ls              |List files                            |
+
+
+And here is a very short git cheatsheet:
+|Command       |Description                                            |
+|-------------------------------|--------------------------------------| 
+|git clone *remote_url*         |clones a git repository               |
+|git add *files*                |add files to stage                    |
+|git commit -m *commit_message* |commit staged files with message      |
+|git push                       |push changes from remote              |
+|git pull                       |pulls changes from remote             |
 
 ## Learn some basic Python
 We will not use very advanced Python features, but please check some [Python tutorials](https://docs.python.org/3/tutorial/).
 
-Make sure you learn things like variables, functions, indentation, lists, maps (dictionaries), if-then-else, for loops, class (OO programming), import libraries.
+Make sure you learn things like variables, functions, indentation, lists, maps (dictionaries), if-then-else, for loops, class (OO programming), and how to import libraries.
 
 
 ## Prepare your computer for the hands-on
