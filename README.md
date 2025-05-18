@@ -1,2 +1,160 @@
-# dis2025
-Flask/Project tutorial for the Databases and Information Systems course
+# DIS 2025
+Flask tutorial for the Databases and Information Systems 2025 course
+
+# Preliminaries
+This repository contains the script of my hands-on Flask tutorial. 
+
+The starting point is where the actual Flask hands-on starts, but please read all the remarks before, and the recommendations section after.
+
+The structure of this repository is the following:
+Tree
+
+## Helpful cheatsheets:
+It is very useful to know some basic terminal commands. Here is a very short cheatsheet:
+
+|Command       |Description                           |
+|--------------|--------------------------------------| 
+|pwd           |Shows present working directory       |
+|mkdir dirname |Make directory                        |
+|cd dirname    |Change directory                      |
+|cd ..         |Go to parent directory of current dir |
+|ls            |List files                            |
+
+
+## Learn some basic Python
+We will not use very advanced Python features, but please check some [Python tutorials](https://docs.python.org/3/tutorial/).
+
+Make sure you learn things like variables, functions, indentation, lists, maps (dictionaries), if-then-else, for loops, class (OO programming), import libraries.
+
+
+## Prepare your computer for the hands-on
+This is a Flask tutorial, which will require Python and PostgreSQL installed on your computer.
+
+Please refer to the [official Python website](https://www.python.org/downloads/) on how to install it. 
+
+Any version of Python greater than 3 should be fine.
+
+On Windows, make sure to have "add python.exe to PATH" marked during the installation.
+
+You probably already did this, but make sure you have PostgreSQL and PGAdmin installed.
+
+Install a text editor for programming. I recommend [VSCode](https://code.visualstudio.com/) and installing the VSCode Python extension.
+
+# Starting point (hands-on)
+This is where, during the lecture, I will start the hands-on.
+
+Please follow this from top to bottom, don't skip any point, and take into consideration the Linux/MacOS/Windows differences.
+
+Note: I only have access to Linux (Ubuntu/NixOS) and Windows 11.
+
+Please let me know issues regarding MacOS and older versions of Windows.
+
+## Minimal Flask App
+All the instructions here are a compilation of the [official Flask tutorial](https://flask.palletsprojects.com/en/stable/) with some additional things.
+
+Let's open a terminal (use PowerShell on Windows) and navigate to a directory where we want to place our project:
+```shell
+cd Documents
+```
+Create a folder with the name of your project:
+```shel
+mkdir minimal_app
+```
+Open the just-created folder:
+```shell
+cd minimal_app
+```
+We need to start a Python virtual environment.
+
+Please read the [official documentation](https://flask.palletsprojects.com/en/stable/installation/#virtual-environments) to understand what this is about. 
+First, let's bootstrap the virtual environment:
+```shell
+ python -m venv .venv
+```
+Next, we need to activate the virtual environment.
+
+There is an operating system quirk here!
+
+On Linux/MacOS, we just do:
+```shell
+. .venv/bin/activate
+```
+But on Windows, we need to change some execution policies first:
+```shell
+Set-ExecutionPolicy Unrestricted -Scope Process
+```
+And then we can activate with a different command:
+```shell
+.venv\Scripts\activate
+```
+Note: Every time you open a new terminal instance, you will need to activate the virtual environment again. 
+
+On Windows, this also includes doing the change of execution policies command again.
+
+From here we are ready to install Python libraries!
+
+We first start with Flask. It is easy:
+```shell
+pip install flask
+```
+How about we use the same code from the [official Flask quick start](https://flask.palletsprojects.com/en/stable/quickstart/#a-minimal-application)?
+
+I will be assuming you are using VSCode as your text editor.
+
+From the same terminal instance we have been using so far, open VSCode, passing the name of the file we will be creating:
+```shell
+code app.py
+```
+Paste the following code into the file, and save it:
+```python
+from flask import Flask
+
+app = Flask(__name__)
+
+@app.route("/")
+def hello_world():
+    return "<p>Hello, World!</p>"
+```
+Now we can start the Flask webserver:
+```shell
+flask run --debug
+```
+Open a web browser and navigate to ` http://127.0.0.1:5000`.
+Congratulations, you have completed your very minimal web application.
+
+### Minimal Flask App with a list data page
+Our example so far has no HTML code, it just prints some text as a webpage.
+
+As you notice, Flask did quite a lot already, it converted a Python string into a basic HTML page.
+
+The main magic of web frameworks like Flask is the convenient way of generating dynamic webpages for us. In Flask, part of this magic happens with templates.
+
+So here is a key Flask concept:
+
+> Templates are files that contain static data as well as placeholders for dynamic data.
+In our case, the templates will be HTML files containing the placeholders for our dynamic data.
+
+
+### Minimal Flask App with a SQLite Database
+SQLite is a quick-and-dirty alternative to Postgres.It is a SQL database, but it is not a dedicated database server. Therefore, it makes the application setup easier, as we don't need to have a separate program running. In the real world, people use things like Postgres because it has way better multi-core performance, and it scales with more replicas. SQLite is just a toy database tool, but it is enough for our goals in this minimal example. In the MVC Flask app, we will use Postgres.
+
+Press `ctrl+c` to stop the Flask server from the previous application.
+
+## MVC Flask app
+
+
+# Recommendations (extras):
+None of these are project requirements but rather recommendations of things to learn.
+
+These recommendations will make your application closer to a real-world system. You may need to know some of these things for your future job, so why not take this chance to learn them?
+### Please focus on meeting the hard requirements of the project (check lecture 0 slides) before doing any "extras".
+
+What to learn (sorted by priority):
+1. Use docker + docker-compose: You are writing software on your computer, which has certain system libraries, in certain versions. How can you ensure the rest of your team can use the development in the same environment as you? One way is to use [Docker](https://www.docker.com/). Docker is not a virtual machine, it is a container solution based on a Linux kernel feature called [Cgroups](https://en.wikipedia.org/wiki/Cgroups). You can use Docker on Windows and MacOS, but for both, the Docker installation relies on virtualization.
+   
+  * To install Docker on your Linux computer, refer to your distribution instructions. For example, Ubuntu users can follow [this](https://docs.docker.com/engine/install/ubuntu/#install-using-the-repository).
+  * To install Docker on your Windows computer, you can follow [these instructions](https://docs.docker.com/desktop/setup/install/windows-install/). Beware that you need to 1. activate hardware virtualization in the BIOS/UEFI of your computer; and 2. enable wsl on Windows.
+  * To install Docker on your MacOS computer, refer to [this](https://docs.docker.com/desktop/setup/install/mac-install/).
+
+3. Implement unit tests: Unit tests are meant to test certain functionalities in isolation. They usually don't connect to separate services and are very minimalistic. The main value of unit tests is confidence when code changes: changing code may break unit tests, which informs what behavior has changed. Unit tests can also work as a form of documenting the functionality of certain blocks of code. Whatever programming language you choose to use, there are probably at least a few unit test frameworks for it. For example, pytest (https://docs.pytest.org/) is a good unit test framework for Python.
+4. Use CI: Deploy your application somewhere: There are many ways to deploy an application to some cloud infrastructure. One easy way is to use services like Fly (https://fly.io), and Render (https://render.com). Those are some with web server free tiers, and a PostgreSQL server for free too. Heroku used to be a very good one, but they don't have free tiers anymore.
