@@ -58,11 +58,11 @@ cd Documents
 ```
 Create a folder with the name of your project:
 ```shel
-mkdir minimal_app
+mkdir minimal
 ```
 Open the just-created folder:
 ```shell
-cd minimal_app
+cd minimal
 ```
 We need to start a Python virtual environment.
 
