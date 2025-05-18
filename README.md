@@ -126,6 +126,8 @@ Open a web browser and navigate to `http://127.0.0.1:5000`.
 
 Congratulations, you have completed your very minimal web application.
 
+Press `ctrl+c` to stop the Flask server.
+
 ### Adding Templates to the Minimal Flask App
 Our example so far has no HTML code, it just prints some text as a webpage.
 
@@ -157,21 +159,22 @@ we paste the following there:
     <li><a>{{ todo }}</a></li>
 {% endfor %}
 ```
-In this [Jinja2](https://jinja.palletsprojects.com/en/stable/) code, we have some extended HTML programming. 
+This is [Jinja2](https://jinja.palletsprojects.com/en/stable/) code: an extended HTML programming language. 
 
-Inside of `{% %}` is Jinja2 code, and inside of `{{  }}` code that will turn into HTML
+Inside of `{% %}` we have Jinja2 commands, and inside of `{{  }}` we print Python values as HTML.
 
-### Minimal Flask App with a SQLite Database
+### Adding a SQLite Database to the Minimal Flask App
 SQLite is a quick-and-dirty alternative to Postgres.
 
-It is a SQL database, but it is not a dedicated database server. Therefore, it makes the application setup easier, as we don't need to have a separate program running. 
+It is a SQL database, but it is not a dedicated database server.
+
+Therefore, it makes the application setup easier, as we don't need to have a separate program running. 
 In the real world, people use things like Postgres because it has way better multi-core performance, and it scales with more replicas. 
 
 SQLite is just a toy database tool, but it is enough for our goals in this minimal example. 
 
 In the MVC Flask app, we will use Postgres.
 
-Press `ctrl+c` to stop the Flask server from the previous application.
 
 ## Minimal Flask app with
 
