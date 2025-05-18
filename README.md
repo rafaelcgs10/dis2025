@@ -2,7 +2,7 @@
 Flask tutorial for the Databases and Information Systems 2025 course
 
 # Preliminaries
-This repository contains the script of my hands-on Flask tutorial. 
+This repository contains the step-by-step of my hands-on Flask tutorial. 
 
 The starting point is where the actual Flask hands-on starts, but please read all the remarks before, and the recommendations section after.
 
