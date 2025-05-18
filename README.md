@@ -196,7 +196,7 @@ Our app is very basic: it only allow us to add and list todos.
 
 But we have covered some import concepts: templates, database interactions, and HTTP requests. 
 
-## Minimal Flask app with
+## Minimal MVC Flask app
 
 
 # Recommendations (extras):
