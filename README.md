@@ -50,6 +50,9 @@ Note: I only have access to Linux (Ubuntu/NixOS) and Windows 11.
 Please let me know issues regarding MacOS and older versions of Windows.
 
 ## Minimal Flask App
+Our app is just a vary basic todo list.
+We will only be able to add and visualize our todos.
+
 All the instructions here are a compilation of the [official Flask tutorial](https://flask.palletsprojects.com/en/stable/) with some additional things.
 
 Let's open a terminal (use PowerShell on Windows) and navigate to a directory where we want to place our project:
@@ -123,18 +126,40 @@ Open a web browser and navigate to `http://127.0.0.1:5000`.
 
 Congratulations, you have completed your very minimal web application.
 
-### Minimal Flask App with a list data page
+### Adding Templates to the Minimal Flask App
 Our example so far has no HTML code, it just prints some text as a webpage.
 
 As you notice, Flask did quite a lot already, it converted a Python string into a basic HTML page.
 
-The main magic of web frameworks like Flask is the convenient way of generating dynamic webpages for us. In Flask, part of this magic happens with templates.
+The main magic of web frameworks like Flask is the convenient way of generating dynamic webpages for us.
+In Flask, part of this magic happens with templates.
 
 So here is a key Flask concept:
 
 > Templates are files that contain static data as well as placeholders for dynamic data.
 In our case, the templates will be HTML files containing the placeholders for our dynamic data.
 
+Let's create a new folder called templates:
+``` shell
+mkdir templates
+```
+
+Inside of this folder we will a file: 
+
+``` shell
+code templates/todo.html
+```
+we paste the following there:
+```html
+<!doctype html>
+<title>Todo:</title>
+{% for todo in todos %}
+    <li><a>{{ todo }}</a></li>
+{% endfor %}
+```
+In this [Jinja2](https://jinja.palletsprojects.com/en/stable/) code, we have some extended HTML programming. 
+
+Inside of `{% %}` is Jinja2 code, and inside of `{{  }}` code that will turn into HTML
 
 ### Minimal Flask App with a SQLite Database
 SQLite is a quick-and-dirty alternative to Postgres.
@@ -148,7 +173,7 @@ In the MVC Flask app, we will use Postgres.
 
 Press `ctrl+c` to stop the Flask server from the previous application.
 
-## MVC Flask app
+## Minimal Flask app with
 
 
 # Recommendations (extras):
