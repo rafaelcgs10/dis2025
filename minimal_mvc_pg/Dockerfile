@@ -1,5 +1,5 @@
 # We build on top of the an existing python image
-FROM python:3.10.17-alpine
+FROM python:3.10.16-alpine
 # This image comes with a /code folder where we should have our code
 WORKDIR /code
 
