@@ -239,7 +239,7 @@ Open those files to understand the changes.
 
 One important difference now is that the `psycopg2` library requires some system libraries from the PostgresSQL installation.
 Hence, not having PostgresSQL installed will make the installation `psycopg2` fail.
-This is the point of course we expect you to have PostgresSQL, and PGAdmin already installed.
+This is the point where you need to have PostgresSQL, and PGAdmin already installed.
 On top of that, on Windows, there is another quirk: `psycopg2` requires some MSVC libraries.
 For Windows users follow these additional instructions:
 
