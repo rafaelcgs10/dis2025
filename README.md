@@ -6,9 +6,6 @@ This repository contains the step-by-step of my hands-on Flask tutorial.
 
 The starting point is where the actual Flask hands-on starts, but please read all the remarks before, and the recommendations section after.
 
-The structure of this repository is the following:
-Tree
-
 ## Helpful cheatsheets:
 It is very useful to know some basic terminal commands.
 
