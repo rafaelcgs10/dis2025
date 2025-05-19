@@ -1,7 +1,7 @@
 <!doctype html>
 <title>Categories:</title>
 
-<a href="{{ url_for('todos') }}" class="register-link">TODOs</a>
+<a href="{{ url_for('todo.todos') }}" class="register-link">TODOs</a>
 
 <form method="POST" action="/categories">
     <input type="text" name="category_name" placeholder="Add another category here" class="form-input" required>

@@ -221,6 +221,9 @@ Naturally, we will have their respective models, views, and controllers.
 You've already learned how to create folders and files using the terminal.
 You can just manually reproduce the file structure in the folder minimal_mvc. Or you can use the `git clone` command to get a local copy of this repository.
 
+At this point you should try to investigate how things work in your own.
+The project is still minimal.
+
 # Recommendations (extras):
 None of these are project requirements but rather recommendations of things to learn.
 
