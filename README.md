@@ -219,7 +219,7 @@ To justify using MVC, we will increment the TODO list app with categories. We wi
 Naturally, we will have their respective models, views, and controllers.
 
 You've already learned how to create folders and files using the terminal.
-You can just manually reproduce the file structure in the folder minimal_mvc. Or you can use the `git clone` command to get a local copy of this repository.
+You can just manually reproduce the file structure in the folder `minimal_mvc`. Or you can use the `git clone` command to get a local copy of this repository.
 
 At this point, you should try to investigate how things work on your own.
 The project is still minimal.
@@ -228,6 +228,39 @@ The `templates` directory is just a bit more sophisticated.
 The controllers glue the models with their views.
 The routes there are registered differently; we are using Flask's [Blueprint](https://flask.palletsprojects.com/en/stable/tutorial/views/#create-a-blueprint) feature to specify the route.
 Later, we just registered the blueprints from both controllers in our old `app.py`, which is now much smaller.
+
+## Switching to PostgreSQL 
+Starting from our last MVC version, we can easily switch from SQLite to PostgresSQL.
+All the code we need is in the `minimal_mvc_pg` folder.
+The main changes occurred in the `database.py` file, and in the models.
+SQLite and PostgresSQL have almost the same SQL language, and their Python libraries also have minor differences in usage.
+
+One important difference now is that the `psycopg2` library requires some system libraries from the PostgresSQL installation.
+Hence, not having PostgresSQL installed will make the installation `psycopg2` fail.
+This is the point of course we expect you to have PostgresSQL, and PGAdmin already installed.
+On top of that, on Windows, there is another quirk: `psycopg2` requires some MSVC libraries.
+For Windows users follow these additional instructions:
+
+1. Download and install [Microsoft C++ Build Tools](https://visualstudio.microsoft.com/visual-cpp-build-tools/).
+2. Using Microsoft C++ Build Tools, install MSVC v140 in Individual components (It is kinda ridiculous to install such a huge package just because of this).
+
+Now we can install `psycopg2`.
+Before, with flask, we did `pip install flask`. But as we add new libraries manually install each dependency will not scale.
+We now use a special file to list our Python dependencies.
+This is the `pyproject.toml` file. If you look into this file, you will notice it has the `flask` and the `psycopg2` dependencies.
+The famous Python `requirements.txt` is an old school way of doing something similar, but we should keep up with times.
+
+We need to the same setup as before with the Python virtual environment, but this time we install all the dependencies with the command
+
+``` shell
+pip install -e .
+```
+
+And we just run the app as usual:
+
+``` shell
+flask run --debug
+```
 
 # Recommendations (extras):
 None of these are project requirements but rather recommendations of things to learn.
