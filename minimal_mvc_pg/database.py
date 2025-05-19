@@ -1,0 +1,30 @@
+import psycopg2
+
+# set your own database
+#db = "dbname='bank' user='postgres' host='127.0.0.1' password = 'UIS'"
+
+def db_connection():
+    db = "dbname='todo' user='postgres' host='127.0.0.1' password = '123'"
+    conn = psycopg2.connect(db)
+
+    return conn
+
+def init_db():
+    conn = db_connection()
+    cur = conn.cursor()
+    # We have a new table for the todo categories
+    cur.execute('''CREATE TABLE IF NOT EXISTS categories (id SERIAL PRIMARY KEY, category_name TEXT NOT NULL UNIQUE)''')
+    # Now we have a foreign key to the categories
+    cur.execute('''CREATE TABLE IF NOT EXISTS todos (id SERIAL PRIMARY KEY, todo_text TEXT NOT NULL UNIQUE, category_id INTEGER NOT NULL, FOREIGN KEY(category_id) REFERENCES categories(id))''')
+    conn.commit()
+
+    categories = ['DIS', 'House chores']
+    for category in categories:
+        cur.execute('INSERT INTO categories (category_name) VALUES (%s) ON CONFLICT DO NOTHING', (category,))
+
+    todos = [('Assignment 1', 'DIS'), ('Groceries', 'House chores'), ('Assignment 2', 'DIS'), ('Project', 'DIS')]
+    for (todo, category) in todos:
+        cur.execute('INSERT INTO todos (todo_text, category_id) VALUES (%s, (SELECT id FROM categories WHERE category_name = %s)) ON CONFLICT DO NOTHING', (todo, category))
+
+    conn.commit()
+    conn.close()

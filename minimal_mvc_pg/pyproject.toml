@@ -1,0 +1,11 @@
+[project]
+name = "todos"
+version = "1.0.0"
+description = "A minimal todo application for the DIS 2025 course."
+dependencies = [
+    "flask",
+    "psycopg2",
+]
+
+[tool.setuptools]
+py-modules = []
