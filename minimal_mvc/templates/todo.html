@@ -4,8 +4,8 @@
 <form method="POST" action="/todo">
     <input type="text" name="new_todo" placeholder="Add another todo here" class="form-input" required>
     Category<SELECT name="category_todo">
-    {% for (id, category_name) in categories %}
-        <OPTION value={{id}}>{{category_name}}</option>
+    {% for category in categories %}
+        <OPTION value={{category.id}}>{{category.name}}</option>
     {% endfor %}
     </SELECT>
     <input type="submit" value="Add" class="btn">
