@@ -61,8 +61,8 @@ Note: I only have access to Linux (Ubuntu/NixOS) and Windows 11.
 Please let me know issues regarding MacOS and older versions of Windows.
 
 ## Minimal Flask App
-Our app is just a vary basic todo list.
-We will only be able to add and visualize our todos.
+Our app is just a vary basic TODO list.
+We will only be able to add and visualize our TODOs.
 
 All the instructions here are a compilation of the [official Flask tutorial](https://flask.palletsprojects.com/en/stable/) with some additional things.
 
@@ -166,6 +166,12 @@ we paste the following there:
 ```html
 <!doctype html>
 <title>Todo:</title>
+
+<form method="POST" action="/todo">
+    <input type="text" name="new_todo" placeholder="Add another todo here" class="form-input" required>
+    <input type="submit" value="Add" class="btn">
+</form>
+
 {% for todo in todos %}
     <li><a>{{ todo }}</a></li>
 {% endfor %}
@@ -173,6 +179,8 @@ we paste the following there:
 This is [Jinja2](https://jinja.palletsprojects.com/en/stable/) code: an extended HTML programming language. 
 
 Inside of `{% %}` we have Jinja2 commands, and inside of `{{  }}` we print Python values as HTML.
+The interesting bit here is the `form` with a `POST` method, which generates a HTTP `POST` request that we can capture in the Python code later.
+The next block of code just lists whatever we will have in the `todo` variable that is passed to this template.
 
 ### Adding a SQLite Database to the Minimal Flask App
 SQLite is a quick-and-dirty alternative to Postgres.
@@ -192,14 +200,13 @@ Replace all its content with the code in [`minimal/app.py`](https://github.com/r
 
 Read all the comments in that file, and when you are done come back to this point in the tutorial.
 
-You can run the app again by following the same instructions from the beginning of this [sub-section](https://github.com/rafaelcgs10/dis2025/blob/main/README.md#minimal-flask-app).
+You can run the app again by following the same instructions from this [sub-section](https://github.com/rafaelcgs10/dis2025/blob/main/README.md#minimal-flask-app).
 
-Our app is very basic: it only allow us to add and list todos.
+Our app is very basic: it only allow us to add and list TODOs.
 
 But we have covered some import concepts: templates, database interactions, and HTTP requests. 
 
 ## Minimal MVC Flask app
-
 
 # Recommendations (extras):
 None of these are project requirements but rather recommendations of things to learn.
