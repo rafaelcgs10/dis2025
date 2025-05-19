@@ -207,6 +207,22 @@ Our app is very basic: it only allow us to add and list TODOs.
 But we have covered some import concepts: templates, database interactions, and HTTP requests. 
 
 ## Minimal MVC Flask app
+Our app is very simple (it only has two small files), which is something great for learning purposes.
+If your project can be executed in very few hundred lines of code, I don't think it is a big sin to keep everything in a single file.
+But if your project has multiple entities, complex algorithms, maybe even a login system, then having everything together is not the best idea.
+Things will get de-organized if we have thousands of lines of code in a single file. 
+The [Clean Code](https://www.amazon.com/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882) book has some decent general rules. [Here is a good summary of them](https://gist.github.com/wojteklu/73c6914cc446146b8b533c0988cf8d29).
+
+The Model View Controller is a very common pattern on how to organize a web application. Let's recall what each thing is:
+* Model: The internal representation of the information 
+* View: The interface for the user
+* Controller: Links model and view
+
+To justify using MVC, we will increment the TODO list app with categories. We will have two entities: TODO and Categories.
+Naturally, we will have their respective models, views, and controllers.
+
+You've already learned how to create folders and files using the terminal.
+You can just manually reproduce the file structure in the folder minimal_mvc. Or you can use the `git clone` command to get a local copy of this repository.
 
 # Recommendations (extras):
 None of these are project requirements but rather recommendations of things to learn.
