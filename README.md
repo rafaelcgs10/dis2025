@@ -221,8 +221,13 @@ Naturally, we will have their respective models, views, and controllers.
 You've already learned how to create folders and files using the terminal.
 You can just manually reproduce the file structure in the folder minimal_mvc. Or you can use the `git clone` command to get a local copy of this repository.
 
-At this point you should try to investigate how things work in your own.
+At this point, you should try to investigate how things work on your own.
 The project is still minimal.
+Some interesting places to look are the `models`  directory, where we define the classes of the models, and we make all the interactions with the database.
+The `templates` directory is just a bit more sophisticated.
+The controllers glue the models with their views.
+The routes there are registered differently; we are using Flask's [Blueprint](https://flask.palletsprojects.com/en/stable/tutorial/views/#create-a-blueprint) feature to specify the route.
+Later, we just registered the blueprints from both controllers in our old `app.py`, which is now much smaller.
 
 # Recommendations (extras):
 None of these are project requirements but rather recommendations of things to learn.
