@@ -13,3 +13,10 @@ def list_categories():
         categories.append(Category(db_category['id'], db_category['category_name']))
     conn.close()
     return categories
+
+def insert_category(category_name):
+    conn = db_connection()
+    c = conn.cursor()
+    c.execute('INSERT OR IGNORE INTO categories (category_name) VALUES (?)', (category_name,))
+    conn.commit()
+    conn.close()

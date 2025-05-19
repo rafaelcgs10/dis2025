@@ -1,6 +1,8 @@
 <!doctype html>
 <title>Todo:</title>
 
+<a href="{{ url_for('categories') }}" class="register-link">Categories</a>
+
 <form method="POST" action="/todo">
     <input type="text" name="new_todo" placeholder="Add another todo here" class="form-input" required>
     Category<SELECT name="category_todo">
@@ -18,7 +20,7 @@
     </tr>
     {% for todo in todos %}
         <tr>
-        <td>{{ todo[0] }}</td> <td>{{ todo[1] }}</td>
+        <td>{{ todo.text }}</td> <td>{{ todo.category.name }}</td>
         </tr>
     {% endfor %}
 </table>
