@@ -192,6 +192,8 @@ Replace all its content with the code in [`minimal/app.py`](https://github.com/r
 
 Read all the comments in that file, and when you are done come back to this point in the tutorial.
 
+You can run the app again by following the same instructions from the beginning of this [section](minimal-flask-app).
+
 Our app is very basic: it only allow us to add and list todos.
 
 But we have covered some import concepts: templates, database interactions, and HTTP requests. 
