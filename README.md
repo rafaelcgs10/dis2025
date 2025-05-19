@@ -266,8 +266,7 @@ Just name the database as `todo`, and save it.
 Open the `database.py` file, and update the database configuration to match your local settings.
 In particular, make sure that you set the proper user and password there.
 
-
-And we just run the app as usual:
+Just run the app as usual:
 
 ``` shell
 flask run --debug
@@ -285,6 +284,8 @@ What to learn (sorted by priority):
   * To install Docker on your Linux computer, refer to your distribution instructions. For example, Ubuntu users can follow [this](https://docs.docker.com/engine/install/ubuntu/#install-using-the-repository).
   * To install Docker on your Windows computer, you can follow [these instructions](https://docs.docker.com/desktop/setup/install/windows-install/). Beware that you need to 1. activate hardware virtualization in the BIOS/UEFI of your computer; and 2. enable wsl on Windows.
   * To install Docker on your MacOS computer, refer to [this](https://docs.docker.com/desktop/setup/install/mac-install/).
+  
+  In the `minimal_mvc_pg` folder there are an usual docker + docker-compose + entrypoint setup. Read the comments in those files
 
 2. Learn some CSS: CSS is how you will make your app look cool. There are many resources out there on how to use CSS.
 3. Implement unit tests: Unit tests are meant to test certain functionalities in isolation. They usually don't connect to separate services and are very minimalistic. The main value of unit tests is confidence when code changes: changing code may break unit tests, which informs what behavior has changed. Unit tests can also work as a form of documenting the functionality of certain blocks of code. Whatever programming language you choose to use, there are probably at least a few unit test frameworks for it. For example, pytest (https://docs.pytest.org/) is a good unit test framework for Python.
