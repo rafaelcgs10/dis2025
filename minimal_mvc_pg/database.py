@@ -1,10 +1,13 @@
 import psycopg2
+import os
 
-# set your own database
-#db = "dbname='bank' user='postgres' host='127.0.0.1' password = 'UIS'"
+# Try to get from system enviroment variable
+user = os.environ.get('PGUSER', 'postgres')
+password = os.environ.get('PGPASSWORD', '123')
+host = os.environ.get('HOST', '127.0.0.1')
 
 def db_connection():
-    db = "dbname='todo' user='postgres' host='127.0.0.1' password = '123'"
+    db = "dbname='todo' user="+ user + " host=" + host + " password =" + password
     conn = psycopg2.connect(db)
 
     return conn
