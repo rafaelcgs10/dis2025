@@ -14,7 +14,7 @@ def db_connection():
 def init_db():
     conn = db_connection()
     # We create a table that has two fields: the id of the todo, and a todo_text that is unique
-    conn.execute('''CREATE TABLE IF NOT EXISTS todos (id INTEGER PRIMARY KEY AUTOINCREMENT, todo_text TEXT NOT NULL UNIQUE) ''')
+    conn.execute('''CREATE TABLE IF NOT EXISTS todos (id INTEGER PRIMARY KEY AUTOINCREMENT, todo_text TEXT NOT NULL UNIQUE)''')
 
     # This cursor a database bureaucracy: it is a control structure that enables traversal over the records in a database.
     c = conn.cursor()
