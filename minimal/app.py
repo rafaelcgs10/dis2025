@@ -21,7 +21,7 @@ def init_db():
     todos = ['DIS assignment 1', 'Groceries', 'DIS assignment 2', 'DIS project']
     for todo in todos:
         # (todo, ) is a Python quirk: we need to provide tuples to the insert query, and that is how we can define a tuple with a single element (an 1-nary tuple).
-        # The OR IGNORE we a trick so when we run the database again we don't get errors from duplicated entries (as we have the UNIQUE constraint).
+        # The OR IGNORE is a trick so when we run the database again we don't get errors from duplicated entries (as we have the UNIQUE constraint).
         c.execute('INSERT OR IGNORE INTO todos (todo_text) VALUES (?)', (todo,))
 
     conn.commit()
@@ -40,7 +40,7 @@ def hello_world():
 @app.route('/todo', methods=['GET', 'POST'])
 def list_todo():
     conn = db_connection()
-    # This route has to functions: GET and POST.
+    # This route has two functions: GET and POST.
     # If there is a POST, we do the insert in the database
     if request.method == 'POST':
         new_todo = request.form['new_todo']
