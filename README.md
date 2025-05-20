@@ -202,6 +202,8 @@ Read all the comments in that file, and when you are done come back to this poin
 
 You can run the app again by following the same instructions from this [sub-section](https://github.com/rafaelcgs10/dis2025/blob/main/README.md#minimal-flask-app).
 
+But this time go to [`http://127.0.0.1:5000/todo`](http://127.0.0.1:5000/todo).
+
 Our app is very basic: it only allow us to add and list TODOs.
 
 But we have covered some import concepts: templates, database interactions, and HTTP requests. 
