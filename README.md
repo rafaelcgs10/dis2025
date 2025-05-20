@@ -48,6 +48,8 @@ You probably already did this, but make sure you have PostgreSQL and PGAdmin ins
 
 Install a text editor for programming. I recommend [VSCode](https://code.visualstudio.com/) and installing the VSCode Python extension.
 
+Git is a requirement for this project. So make sure you have it [installed](https://git-scm.com/downloads).
+
 # Starting point (hands-on)
 This is where, during the lecture, I will start the hands-on.
 
