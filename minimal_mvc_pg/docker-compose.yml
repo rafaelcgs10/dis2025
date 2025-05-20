@@ -10,7 +10,8 @@ services:
       timeout: 10s
       retries: 10
       start_period: 10s
-
+    volumes:
+      - pgdata:/var/lib/postgresql/data
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: '123'
@@ -37,3 +38,5 @@ services:
       - "5000:5000"
     links:
       - database
+volumes:
+  pgdata:
