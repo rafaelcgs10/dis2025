@@ -225,6 +225,7 @@ Naturally, we will have their respective models, views, and controllers.
 
 You've already learned how to create folders and files using the terminal.
 You can just manually reproduce the file structure in the folder `minimal_mvc`. Or you can use the `git clone` command to get a local copy of this repository.
+You can run the webserver as usual, and browse to [`http://127.0.0.1:5000/todo`](http://127.0.0.1:5000/todo) again.
 
 At this point, you should try to investigate how things work on your own.
 The project is still minimal.
